@@ -1,0 +1,26 @@
+#数据库配置
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: superweb
+    password: 123456
+    #配置自动建表：updata:没有表新建，有表更新操作,控制台显示建表语句
+    jpa:
+    #hibernate.ddl-auto: update
+      show-sql: true
+    ## Freemarker 配置
+    ## 文件配置路径
+    freemarker:
+      template-loader-path: classpath:/web/
+      cache: false
+      charset: UTF-8
+      check-template-location: true
+      content-type: text/html
+      expose-request-attributes: true
+      expose-session-attributes: true
+      request-context-attribute: request
+      suffix: .ftl
+server:
+  port: 8068
+
